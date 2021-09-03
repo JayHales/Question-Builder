@@ -5,8 +5,6 @@ export interface IQuestionTemplate {
     forumlaTemplate: (...args: number[]) => number | string,
     questionTextTemplate: string,
 
-    answerSigFigs: number,
-
     additionalInformation?: string,
     
     customParameterGeneration?: () => number;
@@ -36,6 +34,7 @@ export class Question {
         this.questionText = questionTextCopy;
 
         this.answer = this.template.forumlaTemplate(...randomParameters).toString();
+        return;
     }
 
     private static defaultParameterGenerator() {
