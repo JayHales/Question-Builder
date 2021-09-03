@@ -13,8 +13,9 @@ export const number: IQuestionStorage = {
     },
     'division': {
         name: "Division",
-        forumlaTemplate: (a, b) => a + b,
-        questionTextTemplate: "~0~ / ~1~"
+        forumlaTemplate: (a, b) => (a / b).toPrecision(2),
+        questionTextTemplate: "~0~ / ~1~",
+        answerFormatDescription: 'Give to 2 significant figures.'
     },
     'multiplication': {
         name: "Multiplication",
