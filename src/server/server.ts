@@ -1,9 +1,12 @@
-import { Question } from "./question";
+import path from "path";
 import express from 'express';
 
+import { Question } from "./question";
 import {number} from './questions/number';
 
 const app = express();
+
+app.use('/client', express.static(path.join(__dirname, '../example-client')));
 
 app.get('/question', (req, res) => {
 
