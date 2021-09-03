@@ -5,6 +5,7 @@
   "main": "dist/server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "run": "node dist/server.js",
     "build": "tsc"
   },
   "author": "Jay Hales",
@@ -15,5 +16,13 @@
   "dependencies": {
     "express": "^4.17.1",
     "typescript": "^4.4.2"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JayHales/Question-Builder-API.git"
+  },
+  "bugs": {
+    "url": "https://github.com/JayHales/Question-Builder-API/issues"
+  },
+  "homepage": "https://github.com/JayHales/Question-Builder-API#readme"
 }
