@@ -5,7 +5,7 @@ export interface IQuestionTemplate {
     forumlaTemplate: (...args: number[]) => number | string,
     questionTextTemplate: string,
 
-    additionalInformation?: string,
+    answerFormatDescription?: string,
     
     customParameterGeneration?: () => number;
 }

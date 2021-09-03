@@ -10,7 +10,8 @@ Make a request to: `<hosting location>/questions?name=<topic name>`. This return
 
 {template: {
     name: string, //The name of the question
-    questionTextTemplate: string // The template of the question. E.g. ~0~ + ~1~ before the ~i~ are replaced.
+    questionTextTemplate: string, // The template of the question. E.g. ~0~ + ~1~ before the ~i~ are replaced.
+    answerFormatDescription?: string // Additional information on how to answer the question such as significant figures.
   },
   questionText: string, // The template but with the parameters in place of the ~i~.
   answer: string // The correct answer.
