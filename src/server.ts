@@ -1,4 +1,4 @@
-import { Question, IQuestionTemplate } from "./question";
+import { Question } from "./question";
 import express from 'express';
 
 import {number} from './questions/number';
