@@ -6,7 +6,7 @@ switch (process.argv[2]) {
         fs.rmdir('./dist/', () => {});
         break;
     case 'post-tsc':
-        copyDirectory('./src/example-client', './dist/example-client');
+        copyDirectory('./src/client', './dist/client');
         break;
     default:
         console.error('Invalid arguments.');
