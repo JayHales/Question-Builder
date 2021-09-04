@@ -7,7 +7,7 @@ export interface IQuestionTemplate {
 
     answerFormatDescription?: string,
     
-    customParameterGeneration?: () => number;
+    customParameterGeneration?: (parameterIndex?: number) => number;
 }
 
 export class Question {
@@ -26,7 +26,7 @@ export class Question {
 
         for (let i = 0; i < this.template.forumlaTemplate.length; i++) {
 
-            const parameter = this.template.customParameterGeneration === undefined ? Question.defaultParameterGenerator() : this.template.customParameterGeneration();
+            const parameter = this.template.customParameterGeneration === undefined ? Question.defaultParameterGenerator() : this.template.customParameterGeneration(i);
             randomParameters.push(parameter);
             const controlCharacter = '~' + i + '~';
             questionTextCopy = questionTextCopy.replace(controlCharacter, parameter.toString());
@@ -44,5 +44,9 @@ export class Question {
 
 export interface IQuestionStorage {
     [index: string] : IQuestionTemplate
+}
+
+export interface ITopicStorage {
+    [index: string] : IQuestionStorage 
 }
 
