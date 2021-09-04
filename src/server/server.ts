@@ -7,7 +7,7 @@ import { topics } from "./questions/wrapper";
 
 const app = express();
 
-app.use('/', express.static(path.join(__dirname, '../example-client')));
+app.use('/', express.static(path.join(__dirname, '../client')));
 
 app.get('/question', (req, res) => {
 
