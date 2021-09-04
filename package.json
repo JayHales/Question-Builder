@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node dist/server/server.js",
-    "build": "tsc"
+    "build": "node build.js clean && tsc && node build.js post-tsc",
+    "postinstall": "yarn build"
   },
   "author": "Jay Hales",
   "license": "ISC",
