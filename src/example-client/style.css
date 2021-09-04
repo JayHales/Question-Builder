@@ -1,0 +1,42 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box ;
+}
+
+body {
+    font-family: Lato, sans-serif;
+    max-width: 800px;
+    border: 1px black solid;
+    margin: auto;
+}
+
+h1 {
+    text-align: center;
+    font-weight: normal;
+}
+p {
+    height: 25px;
+}
+
+#question-container {
+    text-align: center;
+}
+
+#question-name {
+    color: lightgrey;
+}
+
+#question-info {
+    color: darkgray;
+}
+
+#answer-container, #selector-container {
+    width: fit-content;
+    margin: auto;
+    text-align: center;
+}
+
+#score-container {
+    text-align: center;
+}

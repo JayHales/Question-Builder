@@ -1,0 +1,53 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="script.js" defer></script>
+    <link href="style.css" rel="stylesheet"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+    <title>Question API Client</title>
+</head>
+<body>
+    <h1>Question API Client</h1>
+
+    <div id="question-container">
+        <p id="question-name"></p>
+        <p id="question"></p>
+        <p id="question-info"></p>
+    </div>
+
+    <br>
+
+    <div id="answer-container">
+        <input id="answer-field" type="text"><button id="answer-button" onclick="next();">Next</button>
+        <p id="answer-info"></p>
+    </div>
+    
+    <br>
+
+    <div id="selector-container">a
+        <label>Topic </label><select id="topic-selector-field" onchange="changeTopic();">
+        </select>
+        <span>></span>
+        <label>Question </label><select id="question-selector-field" onchange="changeQuestion();">
+        </select>       
+    </div>
+
+    <br>
+
+    <div id="score-container">
+        <span>Correct: </span>
+        <span id="correct-counter">
+
+        </span>
+        <span> Incorrect: </span>
+        <span id="incorrect-counter">
+
+        </span>
+    </div>
+    
+</body>
+</html>
