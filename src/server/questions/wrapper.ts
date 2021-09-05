@@ -3,7 +3,7 @@ import { IQuestionStorage } from '../question';
 import { number } from './maths/number';
 
 export const topics: ITopicStorage = {
-    'Number': number
+    '(Maths) Number': number
 }
 
 export interface ITopicStorage {
