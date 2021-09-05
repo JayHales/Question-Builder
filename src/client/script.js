@@ -53,8 +53,6 @@ function checkQuestion() {
 
     disableAnswer();
 
-    // Int and string conversons to deal with 1e+4
-
     let wasCorrect = false;
 
     if (!isNaN(answerField.value) && !isNaN(currentQuestion.answer)) {

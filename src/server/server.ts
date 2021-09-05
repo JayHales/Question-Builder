@@ -1,7 +1,7 @@
 import path from 'path';
 import express from 'express';
 
-import { Question, IQuestionStorage } from './question';
+import { Question } from './question';
 
 import { topics } from './questions/wrapper';
 
