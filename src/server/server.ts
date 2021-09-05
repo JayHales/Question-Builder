@@ -80,6 +80,7 @@ function setAPIHeaders(res: express.Response) {
     res.header('Access-Control-Allow-Origin', '*');
     res.header('Cache-Control', 'no-cache');
     res.header('Content-Type', 'application/json');
+    res.header('X-Content-Type-Options', 'nosniff');
 }
 
 app.listen(process.env.PORT || 80);
