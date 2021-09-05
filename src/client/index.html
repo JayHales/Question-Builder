@@ -7,47 +7,52 @@
     <link href="style.css" rel="stylesheet"/>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
     <title>Question API Client</title>
 </head>
 <body>
+    <br>
     <h1>Question API Client</h1>
-
-    <div id="question-container">
+    <div id="question-container" class="container">
+        <h2>Question</h2>
         <p id="question-name"></p>
         <p id="question"></p>
         <p id="question-info"></p>
     </div>
 
-    <br>
-
-    <div id="answer-container">
-        <input id="answer-field" type="text"><button id="answer-button" onclick="next();">Next</button>
+    <div id="answer-container" class="container">
+        <h2>Answer</h2>
+        <input id="answer-field" type="text" placeholder="Select a question" disabled><button id="answer-button" onclick="next();" disabled>Next</button>
         <p id="answer-info"></p>
     </div>
-    
-    <br>
 
-    <div id="selector-container">a
-        <label>Topic </label><select id="topic-selector-field" onchange="changeTopic();">
-        </select>
-        <span>></span>
-        <label>Question </label><select id="question-selector-field" onchange="changeQuestion();">
-        </select>       
+    <div id="selector-container" class="container">
+        <h2>Selection</h2>
+        <div style="display: inline-block">
+            <label> Topic: </label>
+            <select id="topic-selector-field" onchange="changeTopic();"></select>
+        </div>
+
+        <span style="display: inline-block;"> > </span>
+
+        <div style="display: inline-block">
+            <label> Question: </label>
+            <select disabled id="question-selector-field" onchange="changeQuestion();"></select>
+        </div>
     </div>
-
-    <br>
 
     <div id="score-container">
         <span>Correct: </span>
-        <span id="correct-counter">
-
-        </span>
-        <span> Incorrect: </span>
-        <span id="incorrect-counter">
-
-        </span>
+        <span id="correct-counter"></span>
+        <span>Incorrect: </span>
+        <span id="incorrect-counter"></span>
     </div>
+
+    <footer style="margin: 30px 0;">
+        <span>Copyright © <span id="footer-year"></span>. All rights reserved.</span><br>
+        <span>By <a href="https://jayhal.es" style="color: inhert; font-weight: bold;">Jay Hales</a>.</span>
+        <script>document.getElementById('footer-year').innerHTML = new Date().getFullYear()</script>
+    </footer>
     
 </body>
 </html>

@@ -16,26 +16,6 @@ const incorrectCounter = $('#incorrect-counter');
 
 let canUseHTML5Storage = false;
 
-function clearAll() {
-    
-    const length = questionSelectorField.options.length;
-    for (let i = length; i > -1; i--) {    
-        questionSelectorField.remove(i);
-    }
-
-    questionName.innerHTML = '';
-    question.innerHTML = '';
-    questionInfo.innerHTML = '';
-
-    answerField.innerHTML = '';
-    answerInfo.innerHTML = '';
-
-    currentQuestion = {};
-    currentQuestionName = '';    
-
-    disableAnswer(true);    
-}
-
 let currentQuestionName = '';
 let currentTopicName = '';
 
@@ -45,23 +25,12 @@ let shouldCheck = true;
 
 function changeQuestion() {
     currentQuestionName = questionSelectorField.value;
-
-    if (currentQuestionName === '') {
-        clearAll();
-        return;
-    }
-
     newQuestion();
 }
 
 function changeTopic() {
     currentTopicName = topicSelectorField.value;
-
-    if (currentTopicName === '') {
-        clearAll();
-        return;
-    }
-
+    questionSelectorField.disabled = false;
     disableAnswer(true);
     loadQuestions();
 }
@@ -115,6 +84,7 @@ function disableAnswer(disableButton = false) {
 
     if (disableButton) {
         answerButton.disabled = true;
+        answerField.placeholder = 'Select a question first...';
     }
 
     answerField.disabled = true;
@@ -123,6 +93,7 @@ function disableAnswer(disableButton = false) {
 
 function enableAnswer() {
     answerField.value = '';
+    answerField.placeholder = 'Enter answer...';
     answerField.disabled = false;
     answerButton.disabled = false;
     answerField.focus();
@@ -145,11 +116,17 @@ async function populateSelectField(url, field) {
 
     field.options[0] = new Option();
 
+    field.options[0].disabled = true;
+    field.options[0].value = '';
+    field.options[0].innerHTML = 'Select...';
+
     for (let i = 0; i < jsonResponse.length; i++) {
         
         field.options[i + 1] = new Option(jsonResponse[i]);
 
     }
+
+    field.selectedIndex = 0;
 }
 
 
@@ -171,7 +148,6 @@ function incrementStorage(key, amount = 1) {
 correctCounter.innerHTML = incrementStorage('correct', 0);
 incorrectCounter.innerHTML = incrementStorage('incorrect', 0);
 
-disableAnswer(true);
 loadTopics();
 
 
