@@ -14,18 +14,6 @@
 <body>
     <br>
     <h1>Question Generator</h1>
-    <div id="question-container" class="container">
-        <h2>Question</h2>
-        <p id="question-name">Please select a topic.</p>
-        <p id="question"></p>
-        <p id="question-info"></p>
-    </div>
-
-    <div id="answer-container" class="container">
-        <h2>Answer</h2>
-        <input id="answer-field" type="text" placeholder="Select a question" disabled><button id="answer-button" onclick="next();" disabled>Next</button>
-        <p id="answer-info"></p>
-    </div>
 
     <div id="selector-container" class="container">
         <h2>Selection</h2>
@@ -42,6 +30,20 @@
         </div>
     </div>
 
+    <div id="question-container" class="container">
+        <h2>Question</h2>
+        <p id="question-name">Please select a topic.</p>
+        <p id="question"></p>
+        <p id="question-info"></p>
+    </div>
+
+    <div id="answer-container" class="container">
+        <h2>Answer</h2>
+        <input id="answer-field" type="text" placeholder="Select a question" disabled><button id="answer-button" onclick="next();" disabled>Next</button>
+        <p id="answer-info"></p>
+    </div>
+
+    
     <div id="score-container">
         <span>Correct: </span>
         <span id="correct-counter"></span>
