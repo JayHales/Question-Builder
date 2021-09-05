@@ -28,11 +28,12 @@ export class Question {
 
             const parameter = this.template.customParameterGeneration === undefined ? Question.defaultParameterGenerator() : this.template.customParameterGeneration(i);
             randomParameters.push(parameter);
-            const controlCharacter = '~' + i + '~';
+            const controlCharacter = "~" + i + "~";
             questionTextCopy = questionTextCopy.replace(controlCharacter, parameter.toString());
         }
         this.questionText = questionTextCopy;
 
+        
         this.answer = this.template.forumlaTemplate(...randomParameters).toString();
         return;
     }

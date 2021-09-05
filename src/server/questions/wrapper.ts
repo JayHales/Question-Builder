@@ -1,14 +1,13 @@
-import { IQuestionStorage } from '../question';
+import { IQuestionStorage } from "../question";
 
-import { number } from './maths/number';
+import { number } from "./maths/number";
 
 export const topics: ITopicStorage = {
-    '(Maths) Number': number
+    "(Maths) Number": number
 }
 
 export interface ITopicStorage {
     [index: string] : IQuestionStorage 
 }
-
 
 

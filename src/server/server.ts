@@ -1,26 +1,26 @@
-import path from 'path';
-import express from 'express';
+import path from "path";
+import express from "express";
 
-import { Question } from './question';
+import { Question } from "./question";
 
-import { topics } from './questions/wrapper';
+import { topics } from "./questions/wrapper";
 
 const app = express();
 
-app.use('/', express.static(path.join(__dirname, '../client')));
+app.use("/", express.static(path.join(__dirname, "../client")));
 
-app.get('/question', (req, res) => {
+app.get("/question", (req, res) => {
 
     setAPIHeaders(res);
 
-    if(req.query['topic'] === undefined)
+    if(req.query["topic"] === undefined)
         return kill(res);
 
-    if(req.query['name'] === undefined)
+    if(req.query["name"] === undefined)
         return kill(res);
 
-    const topicName = req.query['topic'].toString();
-    const questionName = req.query['name'].toString();
+    const topicName = req.query["topic"].toString();
+    const questionName = req.query["name"].toString();
 
     if (killIf(!Object.keys(topics).includes(topicName), res)) return;
 
@@ -35,11 +35,11 @@ app.get('/question', (req, res) => {
 });
 
 
-app.get('/list', (req, res) => {
+app.get("/list", (req, res) => {
 
     setAPIHeaders(res);
 
-    const topicName = req.query['topic']?.toString();
+    const topicName = req.query["topic"]?.toString();
 
     if (topicName === undefined) {
         res.status(200);
@@ -77,10 +77,10 @@ function kill(res: express.Response) {
 
 function setAPIHeaders(res: express.Response) {
 
-    res.header('Access-Control-Allow-Origin', '*');
-    res.header('Cache-Control', 'no-cache');
-    res.header('Content-Type', 'application/json');
-    res.header('X-Content-Type-Options', 'nosniff');
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Cache-Control", "no-cache");
+    res.header("Content-Type", "application/json");
+    res.header("X-Content-Type-Options", "nosniff");
 }
 
 app.listen(process.env.PORT || 80);
