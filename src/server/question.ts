@@ -46,7 +46,3 @@ export interface IQuestionStorage {
     [index: string] : IQuestionTemplate
 }
 
-export interface ITopicStorage {
-    [index: string] : IQuestionStorage 
-}
-
