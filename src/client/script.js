@@ -53,13 +53,28 @@ function checkQuestion() {
 
     disableAnswer();
 
-    if (answerField.value === currentQuestion.answer) {
-        correctCounter.innerHTML = incrementStorage('correct');
+    // Int and string conversons to deal with 1e+4
+
+    let wasCorrect = false;
+
+    if (!isNaN(answerField.value) && !isNaN(currentQuestion.answer)) {
+        if (parseFloat(answerField.value) === parseFloat(currentQuestion.answer)) {
+            wasCorrect = true;
+        }
     } else {
-        incorrectCounter.innerHTML = incrementStorage('incorrect');
+        if (answerField.value.toLowerCase().trim() === currentQuestion.answer.toLowerCase().trim())
+            wasCorrect = true;
     }
 
-    answerInfo.innerHTML = `${answerField.value === currentQuestion.answer ? 'C' : 'Inc'}orrect. ${currentQuestion.answer} is the correct answer.`;    
+    if (wasCorrect) {
+        correctCounter.innerHTML = incrementStorage('correct');
+        answerInfo.innerHTML = 'Correct. ';
+    } else {
+        incorrectCounter.innerHTML = incrementStorage('incorrect');
+        answerInfo.innerHTML = 'Incorrect. ';
+    }
+
+    answerInfo.innerHTML += currentQuestion.answer + ' is the correct answer.';    
     
     shouldCheck = false;
 }
