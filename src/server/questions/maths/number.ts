@@ -2,17 +2,17 @@ import { IQuestionStorage, Question } from "../../question";
 
 export const number: IQuestionStorage = {
     'addition': {
-        name: "Addition",
+        name: 'Addition',
         forumlaTemplate: (a, b) => a + b,
         questionTextTemplate: "~0~ + ~1~"
     },
     'subtraction': {
-        name: "Subtraction",
+        name: 'Subtraction',
         forumlaTemplate: (a, b) => a - b,
         questionTextTemplate: "~0~ - ~1~"
     },
     'division': {
-        name: "Division",
+        name: 'Division',
         forumlaTemplate: (a, b) => (a / b).toPrecision(2),
         questionTextTemplate: "~0~ / ~1~",
         answerFormatDescription: 'Give to 2 significant figures.',
@@ -29,7 +29,7 @@ export const number: IQuestionStorage = {
         }
     },
     'multiplication': {
-        name: "Multiplication",
+        name: 'Multiplication',
         forumlaTemplate: (a, b) => a * b,
         questionTextTemplate: "~0~ * ~1~"
     }
