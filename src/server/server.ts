@@ -1,9 +1,9 @@
-import path from "path";
+import path from 'path';
 import express from 'express';
 
-import { Question, IQuestionStorage } from "./question";
+import { Question, IQuestionStorage } from './question';
 
-import { topics } from "./questions/wrapper";
+import { topics } from './questions/wrapper';
 
 const app = express();
 
@@ -57,8 +57,7 @@ app.get('/list', (req, res) => {
     res.status(200);
     res.send(Object.keys(topics[topicName]));
 
-    res.end();
-    
+    res.end();   
 
 });
 
