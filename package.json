@@ -5,13 +5,17 @@
   "main": "dist/server.js",
   "scripts": {
     "start": "node dist/server/server.js",
+    "lint": "eslint . --ext .ts",
     "build": "node build.js clean && tsc && node build.js post-tsc",
     "postinstall": "npm run-script build"
   },
   "author": "Jay Hales",
   "license": "ISC",
   "devDependencies": {
-    "@types/express": "^4.17.13"
+    "@types/express": "^4.17.13",
+    "@typescript-eslint/eslint-plugin": "^4.30.0",
+    "@typescript-eslint/parser": "^4.30.0",
+    "eslint": "^7.32.0"
   },
   "dependencies": {
     "express": "^4.17.1",
