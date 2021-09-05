@@ -1,4 +1,5 @@
 import { IQuestionStorage, Question } from "../../question";
+import { IQuestionStorage, Question } from '../../question';
 
 export const number: IQuestionStorage = {
     'addition': {
@@ -16,21 +17,21 @@ export const number: IQuestionStorage = {
         forumlaTemplate: (a, b) => (a / b).toPrecision(2),
         questionTextTemplate: "~0~ / ~1~",
         answerFormatDescription: 'Give to 2 significant figures.',
-        customParameterGeneration: function(i): number {
-
-            let o;
-
-            do {
-                o = Question.defaultParameterGenerator();
-            } while (i === 1 && o === 0);
-
-            return o;
-
-        }
+        customParameterGeneration: (i) => noZeroAt(1, i)
     },
     'multiplication': {
         name: 'Multiplication',
         forumlaTemplate: (a, b) => a * b,
         questionTextTemplate: "~0~ * ~1~"
     }
+}
+
+function noZeroAt(at: number, i:number): number {
+    let o;
+
+    do {
+        o = Question.defaultParameterGenerator();
+    } while (i === at && o === 0);
+
+    return o;
 }
