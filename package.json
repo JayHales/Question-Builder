@@ -1,5 +1,5 @@
 {
-  "name": "question-builder-api",
+  "name": "question-builder",
   "version": "1.0.0",
   "description": "API for creating and requesting randomly generated questions.",
   "main": "dist/server.js",
