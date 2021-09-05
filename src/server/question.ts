@@ -7,7 +7,7 @@ export interface IQuestionTemplate {
 
     answerFormatDescription?: string,
     
-    customParameterGeneration?: (parameterIndex?: number) => number;
+    customParameterGeneration?: (parameterIndex: number) => number;
 }
 
 export class Question {
