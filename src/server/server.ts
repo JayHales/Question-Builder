@@ -11,7 +11,7 @@ app.use('/', express.static(path.join(__dirname, '../client')));
 
 app.get('/question', (req, res) => {
 
-    res.header("Access-Control-Allow-Origin", "*");
+    setAPIHeaders(res);
 
     if(req.query['topic'] === undefined)
         return kill(res);
@@ -37,7 +37,7 @@ app.get('/question', (req, res) => {
 
 app.get('/list', (req, res) => {
 
-    res.header("Access-Control-Allow-Origin", "*");
+    setAPIHeaders(res);
 
     const topicName = req.query['topic']?.toString();
 
@@ -73,6 +73,13 @@ function killIf(critera: boolean, res: express.Response): boolean {
 function kill(res: express.Response) {
     res.status(404);
     res.end();
+}
+
+function setAPIHeaders(res: express.Response) {
+
+    res.header('Access-Control-Allow-Origin', '*');
+    res.header('Cache-Control', 'no-cache');
+    res.header('Content-Type', 'application/json');
 }
 
 app.listen(process.env.PORT || 80);
