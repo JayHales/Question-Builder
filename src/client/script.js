@@ -89,6 +89,8 @@ function disableAnswer(disableButton = false) {
         answerField.placeholder = 'Select a question first...';
     }
 
+    answerButton.innerHTML = 'Next';
+
     answerField.disabled = true;
     answerField.blur();
 }
@@ -98,6 +100,7 @@ function enableAnswer() {
     answerField.placeholder = 'Enter answer...';
     answerField.disabled = false;
     answerButton.disabled = false;
+    answerButton.innerHTML = 'Check';
     answerField.focus();
 }
 
