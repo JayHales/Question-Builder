@@ -78,6 +78,8 @@ async function newQuestion() {
     question.innerHTML = currentQuestion.questionText;    
     questionInfo.innerHTML = currentQuestion.template.answerFormatDescription || '';
     shouldCheck = true;
+
+    MathJax.typeset();
 }
 
 function disableAnswer(disableButton = false) {
