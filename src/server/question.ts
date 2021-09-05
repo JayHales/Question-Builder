@@ -37,7 +37,7 @@ export class Question {
         return;
     }
 
-    private static defaultParameterGenerator() {
+    static defaultParameterGenerator() {
         return Math.floor(Math.random() * 20) - 10;
     }
 }
