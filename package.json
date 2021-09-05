@@ -5,7 +5,7 @@
   "main": "dist/server.js",
   "scripts": {
     "start": "node dist/server/server.js",
-    "lint": "eslint . --ext .ts",
+    "lint": "eslint . --ext .ts --fix",
     "build": "node build.js clean && tsc && node build.js post-tsc",
     "postinstall": "npm run-script build"
   },
