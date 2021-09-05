@@ -1,8 +1,9 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Answer continually generated random questions on a selected topic and sub-topic.">
     <script src="script.js" defer></script>
     <link href="style.css" rel="stylesheet"/>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -30,14 +31,14 @@
         <h2>Selection</h2>
         <div style="display: inline-block">
             <label> Topic: </label>
-            <select id="topic-selector-field" onchange="changeTopic();"></select>
+            <select id="topic-selector-field" title="Topic selector" onchange="changeTopic();"></select>
         </div>
 
         <span style="display: inline-block;"> > </span>
 
         <div style="display: inline-block">
             <label> Question: </label>
-            <select disabled id="question-selector-field" onchange="changeQuestion();"></select>
+            <select disabled id="question-selector-field" title="Question selector" onchange="changeQuestion();"></select>
         </div>
     </div>
 
