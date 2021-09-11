@@ -47,13 +47,13 @@ export const number: IQuestionStorage = {
         name: "Multiplying powers",
         forumlaTemplate: (a, b, c) => b + c,
         answerFormatDescription: "Give to 2 significant figures.",
-        questionTextTemplate: "Find \\(x\\). \\( ~0~ ^ ~1~ \\times ~0~ ^ ~2~ = ~0~ ^ x \\)"
+        questionTextTemplate: "Find \\(x\\). \\( ~0~ ^ {~1~} \\times ~0~ ^ {~2~} = ~0~ ^ x \\)"
     },    
     "Dividing powers": {
         name: "Dividing powers",
         forumlaTemplate: (a, b, c) => b - c,
         answerFormatDescription: "Give to 2 significant figures.",
-        questionTextTemplate: "Find \\(x\\). \\( ~0~ ^ ~1~ \\div ~0~ ^ ~2~ = ~0~ ^ x \\)"
+        questionTextTemplate: "Find \\(x\\). \\( ~0~ ^ {~1~} \\div ~0~ ^ {~2~} = ~0~ ^ x \\)"
     },
     
 }
