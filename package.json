@@ -1,5 +1,5 @@
 {
-  "name": "question-builder-api",
+  "name": "question-builder",
   "version": "1.0.0",
   "description": "API for creating and requesting randomly generated questions.",
   "main": "dist/server.js",
@@ -23,10 +23,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/JayHales/Question-Builder-API.git"
+    "url": "git+https://github.com/JayHales/Question-Builder.git"
   },
   "bugs": {
-    "url": "https://github.com/JayHales/Question-Builder-API/issues"
+    "url": "https://github.com/JayHales/Question-Builder/issues"
   },
-  "homepage": "https://github.com/JayHales/Question-Builder-API#readme"
+  "homepage": "https://github.com/JayHales/Question-Builder#readme"
 }
