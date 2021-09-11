@@ -35,7 +35,27 @@ export const number: IQuestionStorage = {
         answerFormatDescription: "Give to 2 significant figures.",
         questionTextTemplate: "\\(\\sqrt[~1~]{~0~}\\)",
         customParameterGeneration: (i) => Math.abs(noZeroAt(1, i))
-    }
+    },
+    "Raising to fractional powers": {
+        name: "Raising to fractional powers",
+        forumlaTemplate: (a, b, c) => Math.pow(a, (b / c)).toPrecision(2),
+        answerFormatDescription: "Give to 2 significant figures.",
+        questionTextTemplate: "\\( ~0~ ^ \\frac{~1~}{~2~} \\)",
+        customParameterGeneration: (i) => noZeroAt(2, i)
+    },
+    "Multiplying powers": {
+        name: "Multiplying powers",
+        forumlaTemplate: (a, b, c) => b + c,
+        answerFormatDescription: "Give to 2 significant figures.",
+        questionTextTemplate: "Find \\(x\\). \\( ~0~ ^ ~1~ \\times ~0~ ^ ~2~ = ~0~ ^ x \\)"
+    },    
+    "Dividing powers": {
+        name: "Dividing powers",
+        forumlaTemplate: (a, b, c) => b - c,
+        answerFormatDescription: "Give to 2 significant figures.",
+        questionTextTemplate: "Find \\(x\\). \\( ~0~ ^ ~1~ \\div ~0~ ^ ~2~ = ~0~ ^ x \\)"
+    },
+    
 }
 
 function noZeroAt(at: number, i:number): number {
