@@ -29,7 +29,8 @@ export class Question {
             const parameter = this.template.customParameterGeneration === undefined ? Question.defaultParameterGenerator() : this.template.customParameterGeneration(i);
             randomParameters.push(parameter);
             const controlCharacter = "~" + i + "~";
-            questionTextCopy = questionTextCopy.replace(controlCharacter, parameter.toString());
+            const re = new RegExp(controlCharacter, "g");
+            questionTextCopy = questionTextCopy.replace(re, parameter.toString());
         }
         this.questionText = questionTextCopy;
 
